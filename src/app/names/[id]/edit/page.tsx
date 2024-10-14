@@ -1,6 +1,7 @@
 // app/names/[id]/page.tsx
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const NameDetail = ({ params }: { params: { id: string } }) => {
@@ -21,7 +22,7 @@ const NameDetail = ({ params }: { params: { id: string } }) => {
   return (
     <div>
       <h1>{name.name}</h1>
-      <img src={`data:image/jpeg;base64,${name.image}`} alt={name.name} />
+      <Image src={`data:image/jpeg;base64,${name.image}`} alt={name.name} />
     </div>
   );
 };

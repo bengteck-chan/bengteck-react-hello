@@ -1,6 +1,7 @@
 // app/names/page.tsx
 "use client";
 
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 interface Name {
@@ -41,7 +42,7 @@ const NameList = () => {
               <td>{name.id}</td>
               <td>{name.name}</td>
               <td>
-              <img src={`data:image/jpeg;base64,${name.image}`} alt={name.name} width='100'/>
+              <Image src={`data:image/jpeg;base64,${name.image}`} alt={name.name} width='100'/>
               </td>
             </tr>
           ))}
