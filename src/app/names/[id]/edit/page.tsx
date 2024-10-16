@@ -22,7 +22,7 @@ const NameDetail = ({ params }: { params: { id: string } }) => {
   return (
     <div>
       <h1>{name.name}</h1>
-      <Image src={`data:image/jpeg;base64,${name.image}`} alt={name.name} />
+      <Image src={`data:image/jpeg;base64,${name.image}`} alt={name.name} width='100' height='50' />
     </div>
   );
 };

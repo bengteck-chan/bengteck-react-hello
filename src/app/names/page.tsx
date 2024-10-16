@@ -42,7 +42,7 @@ const NameList = () => {
               <td>{name.id}</td>
               <td>{name.name}</td>
               <td>
-              <Image src={`data:image/jpeg;base64,${name.image}`} alt={name.name} width='100'/>
+              <Image src={`data:image/jpeg;base64,${name.image}`} alt={name.name} width='100' height='50'/>
               </td>
             </tr>
           ))}
