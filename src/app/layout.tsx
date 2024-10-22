@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { getRoute } from "./utilities";
+import Link from "next/link";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -22,12 +25,37 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) 
+{
+
+  const navigations = [
+    {title: "Home", href: getRoute("/")},
+    {title: "List Names", href: getRoute("/names")},
+    {title: "Add Name", href: getRoute("/names/new")},
+  ]
+  
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* simple menu navigation with links to other pages */}
+
+        <nav className="bg-gray-800 py-4">
+          <div className="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" className="text-lg font-bold text-white">Logo</a>
+            <ul className="flex items-center space-x-4">
+              {
+                navigations.map((navigation) => (
+                  <li key={navigation.title}>
+                    <Link  className="text-gray-300 hover:text-white transition duration-300" href={navigation.href}>{navigation.title}</Link>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </nav>
+
         {children}
       </body>
     </html>

@@ -1,6 +1,10 @@
 # Use the official Node.js image.
 FROM node:22-alpine
 
+# Install sqlite3 and any dependencies
+RUN apk update && \
+    apk add --no-cache sqlite sqlite-dev
+    
 # Set working directory.
 WORKDIR /app
 
