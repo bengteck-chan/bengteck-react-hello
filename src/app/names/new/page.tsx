@@ -5,7 +5,10 @@ import AddFormComponent from "./AddFormComponent";
 const AddName = () => {
   return (
     <div>
-      <AddFormComponent addNameApiUrl={getRoute("/api/names")} />
+      <AddFormComponent
+        addNameApiUrl={getRoute("/api/names")}
+        nameListUrl={getRoute("/names")}
+      />
     </div>
   );
 };

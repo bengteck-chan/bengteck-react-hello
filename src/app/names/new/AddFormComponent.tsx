@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-const AddFormComponent = ({addNameApiUrl}: {addNameApiUrl: string}) => {
+const AddFormComponent = ({addNameApiUrl, nameListUrl}: {addNameApiUrl: string, nameListUrl: string}) => {
   const [name, setName] = useState("");
   const [image, setImage] = useState<File | null>(null);
   const router = useRouter();
@@ -22,7 +22,7 @@ const AddFormComponent = ({addNameApiUrl}: {addNameApiUrl: string}) => {
       body: formData,
     });
 
-    router.push("/names");
+    router.push(nameListUrl);
   };
 
   return (
